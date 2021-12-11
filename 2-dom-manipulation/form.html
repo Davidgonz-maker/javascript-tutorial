@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Html Form</title>
+  </head>
+  <body class="main-form">
+    <header>
+      <h1>Simple Form</h1>
+    </header>
+    <main>
+      <form class="form">
+        <label class="label" for="name"> 
+          First Name <br />
+          <input type="text" name="name" id="name" required />
+        </label>
+        <label class="label" for="lastName">
+          Last Name <br />
+          <input type="text" name="lastName" id="lastName" required />
+        </label>
+        <label class="label" for="email">
+          Email <br />
+          <input type="email" name="email" id="email" required />
+        </label>
+        <label class="label" for="dateOfBirth">
+          Date of Birth <br />
+          <input type="date" name="date" id="dateOfBirth" required />
+        </label>
+        <label class="label" for="phone">
+          Phone number <br />
+          <input type="number" name="phone" id="phone" required>
+        </label>
+
+        <label class="label">
+          Genero <br />
+          <select name="gender">
+            <option value="" disabled selected hidden>
+              Selecciona tu Genero
+            </option>
+            <option value="Female">Femenino</option>
+            <option value="Male">Masculino</option>
+          </select>
+        </label>
+
+        <fieldset class="fieldset">
+          <legend>Selecciona tu nivel socio economico</legend>
+          <input type="radio" name="estrato" id="estrato" />
+          <label class="label" for="estrato"> estrato 1 </label>
+          <input type="radio" name="estrato" id="estrato" />
+          <label class="label" for="estrato"> estrato 2</label>
+          <input type="radio" name="estrato" id="estrato" />
+          <label class="label" for="estrato"> estrato 3</label>
+          <input type="radio" name="estrato" id="estrato" />
+          <label class="label" for="estrato"> estrato 4</label>
+          <input type="radio" name="estrato" id="estrato" />
+          <label class="label" for="estrato"> estrato 5</label>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend>Selecciona tu curso</legend>
+          <label class="label" for="curso">
+            <input type="checkbox" name="curso" id="curso" />
+            Layout CSS
+          </label>
+          <label class="label" for="curso"> 
+            <input type="checkbox" name="curso" id="curso" /> 
+            Javascript
+            </label>
+          <label class="label" for="curso"></label>
+            <input type="checkbox" name="curso" id="curso" />
+            React 
+          </label>
+          <label class="label" for="curso">
+            <input type="checkbox" name="curso" id="curso" />
+            Angular
+          </label>
+        </fieldset>
+        <fieldset class="fieldset">
+          <input type="file" name="search-file" id="search-file" />
+        </fieldset>
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+
+    <script src="./form.js"></script>
+  </body>
+</html>
