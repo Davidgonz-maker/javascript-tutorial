@@ -1,54 +1,52 @@
-const form = document.querySelector("form");
+import { REGULAR_EXPRESSIONS } from "./regularExpressions";
+
+const form = document.querySelector(".form");
 const nameField = document.querySelector("#name");
 const lastNameField = document.querySelector("#lastName");
 const emailField = document.querySelector("#email");
 const phoneNumberField = document.querySelector("#phone");
-const radioInputs = document.querySelectorAll("#estrato");
+const radioInputs = document.querySelectorAll("[name=layer]");
 const inputs = document.querySelectorAll("input");
 
-const expressions = {
-  name: /^([a-zA-Z]+\s?){2}?$/,
-  email: /^[a-zA-Z0-9._-]+@[a-zA-z0-9._-]+\.[a-zA-Z]+$/,
-  phoneNumber:
-    /^(\+\d{2})?[\s\-]?(\d{3})[\s\-]?(\d{2,3})[\s\-]?(\d{2})[\s\-]?(\d{2})$/,
-};
+const CORRECT_FIELD = "correctField";
+const ERROR_FIELD = "errorField";
 
 function validateForm(event) {
   switch (event.target.name) {
     case "name":
-      if (expressions.name.test(event.target.value)) {
-        nameField.classList.add("correctField");
-        nameField.classList.remove("errorField");
+      if (REGULAR_EXPRESSIONS.name.test(event.target.value)) {
+        nameField.classList.add(CORRECT_FIELD);
+        nameField.classList.remove(ERROR_FIELD);
       } else {
-        nameField.classList.add("errorField");
-        nameField.classList.remove("correctField");
+        nameField.classList.add(ERROR_FIELD);
+        nameField.classList.remove(CORRECT_FIELD);
       }
       break;
     case "lastName":
-      if (expressions.name.test(event.target.value)) {
-        lastNameField.classList.add("correctField");
-        lastNameField.classList.remove("errorField");
+      if (REGULAR_EXPRESSIONS.name.test(event.target.value)) {
+        lastNameField.classList.add(CORRECT_FIELD);
+        lastNameField.classList.remove(ERROR_FIELD);
       } else {
-        lastNameField.classList.add("errorField");
-        lastNameField.classList.remove("correctField");
+        lastNameField.classList.add(ERROR_FIELD);
+        lastNameField.classList.remove(CORRECT_FIELD);
       }
       break;
     case "email":
-      if (expressions.email.test(event.target.value)) {
-        emailField.classList.add("correctField");
-        emailField.classList.remove("errorField");
+      if (REGULAR_EXPRESSIONS.email.test(event.target.value)) {
+        emailField.classList.add(CORRECT_FIELD);
+        emailField.classList.remove(ERROR_FIELD);
       } else {
-        emailField.classList.add("errorField");
-        emailField.classList.remove("correctField");
+        emailField.classList.add(ERROR_FIELD);
+        emailField.classList.remove(CORRECT_FIELD);
       }
       break;
     case "phone":
-      if (expressions.phoneNumber.test(event.target.value)) {
-        phoneNumberField.classList.add("correctField");
-        phoneNumberField.classList.remove("errorField");
+      if (REGULAR_EXPRESSIONS.phoneNumber.test(event.target.value)) {
+        phoneNumberField.classList.add(CORRECT_FIELD);
+        phoneNumberField.classList.remove(ERROR_FIELD);
       } else {
-        phoneNumberField.classList.add("errorField");
-        phoneNumberField.classList.remove("correctField");
+        phoneNumberField.classList.add(ERROR_FIELD);
+        phoneNumberField.classList.remove(CORRECT_FIELD);
       }
       break;
   }
