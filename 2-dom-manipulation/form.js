@@ -12,44 +12,39 @@ const CORRECT_FIELD = "correctField";
 const ERROR_FIELD = "errorField";
 
 function validateForm(event) {
-  switch (event.target.name) {
+  const {
+    name: NAME_REGEX,
+    email: EMAIL_REGEX,
+    phoneNumber: PHONE_REGEX,
+  } = REGULAR_EXPRESSIONS;
+  const {
+    target: { value, name },
+  } = event;
+
+  switch (name) {
     case "name":
-      if (REGULAR_EXPRESSIONS.name.test(event.target.value)) {
-        nameField.classList.add(CORRECT_FIELD);
-        nameField.classList.remove(ERROR_FIELD);
-      } else {
-        nameField.classList.add(ERROR_FIELD);
-        nameField.classList.remove(CORRECT_FIELD);
-      }
+      validateText(NAME_REGEX, value, nameField);
       break;
     case "lastName":
-      if (REGULAR_EXPRESSIONS.name.test(event.target.value)) {
-        lastNameField.classList.add(CORRECT_FIELD);
-        lastNameField.classList.remove(ERROR_FIELD);
-      } else {
-        lastNameField.classList.add(ERROR_FIELD);
-        lastNameField.classList.remove(CORRECT_FIELD);
-      }
+      validateText(NAME_REGEX, value, lastNameField);
       break;
     case "email":
-      if (REGULAR_EXPRESSIONS.email.test(event.target.value)) {
-        emailField.classList.add(CORRECT_FIELD);
-        emailField.classList.remove(ERROR_FIELD);
-      } else {
-        emailField.classList.add(ERROR_FIELD);
-        emailField.classList.remove(CORRECT_FIELD);
-      }
+      validateText(EMAIL_REGEX, value, emailField);
       break;
     case "phone":
-      if (REGULAR_EXPRESSIONS.phoneNumber.test(event.target.value)) {
-        phoneNumberField.classList.add(CORRECT_FIELD);
-        phoneNumberField.classList.remove(ERROR_FIELD);
-      } else {
-        phoneNumberField.classList.add(ERROR_FIELD);
-        phoneNumberField.classList.remove(CORRECT_FIELD);
-      }
+      validateText(PHONE_REGEX, value, phoneNumberField);
       break;
   }
+}
+
+function validateText(regex, text, textElement) {
+  if (regex.test(text)) {
+    textElement.classList.add(CORRECT_FIELD);
+    textElement.classList.remove(ERROR_FIELD);
+    return;
+  }
+  textElement.classList.add(ERROR_FIELD);
+  textElement.classList.remove(CORRECT_FIELD);
 }
 
 inputs.forEach((input) => {
@@ -59,7 +54,6 @@ inputs.forEach((input) => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  let selectedValue;
   for (const radio of radioInputs) {
     if (radio.checked) {
       selectedValue = radio.value;
