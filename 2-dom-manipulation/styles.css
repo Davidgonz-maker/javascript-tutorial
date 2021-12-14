@@ -1,0 +1,33 @@
+.main-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin: 7px;
+}
+
+.hobbies {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldset {
+  margin-block: 5px;
+}
+
+.correctField {
+  background-color: rgba(1, 189, 95, 0.466);
+}
+
+.errorField {
+  background-color: rgba(197, 36, 36, 0.452);
+}

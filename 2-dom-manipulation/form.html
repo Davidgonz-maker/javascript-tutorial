@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Html Form</title>
+  </head>
+  <body class="main-form">
+    <header>
+      <h1>Simple Form</h1>
+    </header>
+    <main>
+      <form class="form">
+        <label class="label" for="name"> 
+          First Name <br />
+          <input type="text" name="name" id="name" required />
+        </label>
+        <label class="label" for="lastName">
+          Last Name <br />
+          <input type="text" name="lastName" id="lastName" required />
+        </label>
+        <label class="label" for="email">
+          Email <br />
+          <input type="email" name="email" id="email" required />
+        </label>
+        <label class="label" for="dateOfBirth">
+          Date of Birth <br />
+          <input type="date" name="date" id="dateOfBirth" required />
+        </label>
+        <label class="label" for="phone">
+          Phone number <br />
+          <input type="number" name="phone" id="phone" required>
+        </label>
+
+        <label class="label">
+          Genero <br />
+          <select name="gender">
+            <option value="" disabled selected hidden>
+              Selecciona tu Genero
+            </option>
+            <option value="Female">Femenino</option>
+            <option value="Male">Masculino</option>
+          </select>
+        </label>
+
+        <fieldset class="fieldset">
+          <legend>Selecciona tu nivel socio economico</legend>
+          <input type="radio" name="layer" id="layer-1" />
+          <label class="label" for="layer-1"> layer 1 </label>
+          <input type="radio" name="layer" id="layer-2" />
+          <label class="label" for="layer-2"> layer 2</label>
+          <input type="radio" name="layer" id="layer-3" />
+          <label class="label" for="layer-3"> layer 3</label>
+          <input type="radio" name="layer" id="layer-4" />
+          <label class="label" for="layer-4"> layer 4</label>
+          <input type="radio" name="layer" id="layer-5" />
+          <label class="label" for="layer-5"> layer 5</label>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend>Selecciona tu curso</legend>
+          <label class="label" for="css">
+            <input type="checkbox" name="course" id="css" />
+            Layout CSS
+          </label>
+          <label class="label" for="javascript"> 
+            <input type="checkbox" name="course" id="javascript" /> 
+            Javascript
+            </label>
+          <label class="label" for="react"></label>
+            <input type="checkbox" name="course" id="react" />
+            React 
+          </label>
+          <label class="label" for="angular">
+            <input type="checkbox" name="course" id="angular" />
+            Angular
+          </label>
+        </fieldset>
+        <fieldset class="fieldset">
+          <input type="file" name="searchFile" id="searchFile" />
+        </fieldset>
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+
+    <script type="module" src="./form.js"></script>
+  </body>
+</html>
